@@ -14,7 +14,7 @@ class CreateTurnoTable extends Migration
     public function up()
     {
         Schema::create('turno', function (Blueprint $table) {
-            $table->integer('id')->primary();
+            $table->id();
             $table->string('nombre', 6);
         });
     }

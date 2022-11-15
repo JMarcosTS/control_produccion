@@ -14,7 +14,7 @@ class CreateOperadorTable extends Migration
     public function up()
     {
         Schema::create('operador', function (Blueprint $table) {
-            $table->integer('id')->primary();
+            $table->id();
             $table->string('nombre');
         });
     }

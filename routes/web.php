@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\ProductoController;
+use App\Http\Controllers\RegTrefiladoraController;
+use App\Models\RegTrefiladora;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    
     return view('inicio');
 });
 
@@ -28,10 +30,4 @@ Route::middleware([
     })->name('dashboard');
 });
 
-
-
-Route::get('/trefiladora', function () {
-    return view('trefiladora.index')->name('trefiladora.index');
-});
-
-Route::get('/trefiladora/productos',[ProductoController::class, 'index'])->name('trefiladora.productos.index');
+Route::get('trefiladora',[RegTrefiladoraController::class, 'index'])->name('trefiladora.index');

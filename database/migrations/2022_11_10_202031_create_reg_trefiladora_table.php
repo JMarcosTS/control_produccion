@@ -14,13 +14,13 @@ class CreateRegTrefiladoraTable extends Migration
     public function up()
     {
         Schema::create('reg_trefiladora', function (Blueprint $table) {
-            $table->integer('id')->primary();
+            $table->id();
             $table->integer('nalambron')->nullable();
             $table->timestamp('fecha');
-            $table->integer('id_producto')->nullable();
+            $table->unsignedBigInteger('id_producto')->nullable();
             $table->integer('diametro')->nullable();
-            $table->integer('id_turno')->nullable();
-            $table->integer('id_operador')->nullable();
+            $table->unsignedBigInteger('id_turno')->nullable();
+            $table->unsignedBigInteger('id_operador')->nullable();
             $table->integer('horas')->nullable();
             $table->integer('kg')->nullable();
             $table->text('opservaciones')->nullable();
